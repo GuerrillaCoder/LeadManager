@@ -1,0 +1,53 @@
+﻿@model LeadManager.ViewModels.LeadViewModel
+
+@{
+    ViewBag.Title = "Add a New Lead";
+}
+
+<div class="row">
+    <div class="col-md-6 col-md-push-3">
+        <h2 class="text-center">Add Lead</h2>
+        @if (ViewBag.Message != null)
+        {
+            <div>@ViewBag.Message</div>
+        }
+        <form role="form" class="form-horizontal" asp-controller="Lead" asp-action="Add" method="post">
+            <div class="form-group">
+                <label class="control-label col-md-3" asp-for="Name">Name</label>
+                <div class="col-md-9">
+                    <input class="form-control" asp-for="Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" asp-for="Email">Email</label>
+                <div class="col-md-9">
+                    <input class="form-control" asp-for="Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" asp-for="Phone">Phone</label>
+                <div class="col-md-9">
+                    <input class="form-control" asp-for="Phone">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" asp-for="Description">Description</label>
+                <div class="col-md-9">
+                    <textarea class="form-control" asp-for="Description"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-3" asp-for="Budget">Budget</label>
+                <div class="col-md-9">
+                    <select class="form-control" asp-for="Budget" asp-items="Html.GetEnumSelectList<Budget>()"></select>
+                </div>
+            </div>
+            <div class="form-group">
+
+                <input type="submit" value="Send Message" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

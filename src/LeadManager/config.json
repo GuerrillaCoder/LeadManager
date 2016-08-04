@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "Development": "Server=(localdb)\\mssqllocaldb;Database=LeadManager.Development;Trusted_Connection=True;"
+  }
+}
